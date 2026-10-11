@@ -8,3 +8,6 @@ target/
 Thumbs.db
 pgdata/
 exports/
+# local-only submission helpers (not part of the deliverable)
+DEMO_SCRIPT.md
+SUBMIT_CHECKLIST.md
