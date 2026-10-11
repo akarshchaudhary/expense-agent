@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Expense Agent — review &amp; submit</title>
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<header>
+  <h1>🧾 Review &amp; submit</h1>
+  <p>Step 2 of 2 — <a href="/">← back to upload</a> <span id="claimName" class="pill">—</span></p>
+</header>
+<main>
+  <section class="card">
+    <h2>Claim summary</h2>
+    <div id="total"></div>
+    <div id="status" class="muted"></div>
+    <table id="tbl">
+      <thead><tr><th>Vendor</th><th>Date</th><th>Amount</th><th>Category</th><th>Flags</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+  <section class="card">
+    <h2>Attach more bills</h2>
+    <input id="files" type="file" multiple accept=".png,.jpg,.jpeg,.webp,.pdf,.txt"/>
+    <button id="upload">Upload &amp; extract</button>
+    <div id="upMsg" class="muted"></div>
+  </section>  <section class="card">
+    <h2>Questions — answer only what's missing</h2>
+    <div id="qs"></div>
+  </section>
+  <section class="card">
+    <h2>Policy checks</h2>
+    <div id="vs"></div>
+    <div class="row"><button id="submit" class="primary">Submit (mock finance)</button></div>
+    <div id="subMsg"></div>
+  </section>
+</main>
+<div id="loader" class="overlay" hidden>
+  <div class="spinner"></div>
+  <div id="loadMsg">Extracting your bills…</div>
+</div>
+<script src="/submit.js"></script>
+</body>
+</html>

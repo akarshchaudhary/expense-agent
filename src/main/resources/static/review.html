@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Expense Agent — finance review</title>
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<header>
+  <h1>💼 Finance review</h1>
+  <p>Submitted claims await your approve/reject. <a href="/">← employee upload</a> · <a href="/submit.html">review &amp; submit</a> · <a href="/swagger-ui.html">API docs →</a></p>
+</header>
+<main>
+  <section class="card">
+    <h2>Queue — submitted claims only (drafts never appear here)</h2>
+    <div class="row">
+      <select id="fStatus">
+        <option value="SUBMITTED">SUBMITTED</option>
+        <option value="APPROVED">APPROVED</option>
+        <option value="REJECTED">REJECTED</option>
+      </select>
+      <button id="reload">Reload</button>
+      <span class="muted">Approved/rejected claims leave this queue.</span>
+    </div>
+    <table id="qt"><thead><tr><th>Employee</th><th>Title</th><th>Total</th><th>Status</th><th></th></tr></thead><tbody></tbody></table>
+  </section>
+  <section class="card">
+    <h2>Claim detail</h2>
+    <div id="detail" class="muted">Pick a claim above.</div>
+  </section>
+</main>
+<script src="/review.js"></script>
+</body>
+</html>

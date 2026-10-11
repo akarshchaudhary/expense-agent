@@ -1,0 +1,44 @@
+server:
+  port: ${PORT:8081}
+
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:h2:mem:expense;MODE=PostgreSQL;DB_CLOSE_DELAY=-1}
+    username: ${DATABASE_USERNAME:sa}
+    password: ${DATABASE_PASSWORD:}
+    driver-class-name: ${DATABASE_DRIVER:org.h2.Driver}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  servlet:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 60MB
+
+app:
+  extractor:
+    provider: ${EXTRACTOR_PROVIDER:auto} # auto | gemini | glmocr
+  gemini:
+    api-key: ${GEMINI_API_KEY:}
+    model: ${GEMINI_MODEL:gemini-3.8-flash}
+  ollama:
+    base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+  glmocr:
+    model: ${GLMOCR_MODEL:glm-ocr}
+  policy:
+    max-claim-total: ${POLICY_MAX_TOTAL:100000}
+    receipt-required-above: ${POLICY_RECEIPT_ABOVE:500}
+    max-age-days: ${POLICY_MAX_AGE_DAYS:90}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

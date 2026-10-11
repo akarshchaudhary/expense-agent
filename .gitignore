@@ -1,0 +1,10 @@
+target/
+.env
+*.class
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+pgdata/
+exports/

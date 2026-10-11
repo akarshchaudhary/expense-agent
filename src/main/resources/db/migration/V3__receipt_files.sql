@@ -1,0 +1,2 @@
+ALTER TABLE receipt_docs ADD COLUMN IF NOT EXISTS content BYTEA;
+ALTER TABLE expense_items ADD COLUMN IF NOT EXISTS receipt_id UUID REFERENCES receipt_docs(id) ON DELETE SET NULL;

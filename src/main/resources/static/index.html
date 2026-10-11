@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Expense Agent — new claim</title>
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<header>
+  <h1>🧾 Expense Agent</h1>
+  <p>Step 1 of 2 — create a claim and drop your bills. Finance system is mocked. <a href="/review.html">Finance review →</a> · <a href="/swagger-ui.html">API docs →</a></p>
+</header>
+<main>
+  <section class="card">
+    <h2>1. Claim</h2>
+    <div class="row">
+      <input id="emp" placeholder="employee id (e.g. emp-001)" value="emp-001"/>
+      <input id="title" placeholder="claim title" value="Bengaluru trip"/>
+      <button id="newClaim">New claim</button>
+    </div>
+    <div class="row">
+      <select id="claimSel"></select>
+      <button id="refresh">Refresh</button>
+      <span id="status" class="pill">—</span>
+    </div>
+  </section>
+  <section class="card">
+    <h2>2. Drop receipts (jpg/png/pdf/txt)</h2>
+    <input id="files" type="file" multiple accept=".png,.jpg,.jpeg,.webp,.pdf,.txt"/>
+    <button id="upload">Upload &amp; extract</button>
+    <div id="upMsg" class="muted"></div>
+    <p class="muted">Tip: no scanner? Upload a <code>.txt</code> with receipt text — same pipeline. Vision takes ~10-40s per photo.</p>
+    <div class="row">
+      <button id="goSubmit" class="primary">Review &amp; submit →</button>
+    </div>
+  </section>
+</main>
+<div id="loader" class="overlay" hidden>
+  <div class="spinner"></div>
+  <div id="loadMsg">Extracting your bills…</div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

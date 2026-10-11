@@ -1,0 +1,15 @@
+body{font-family:system-ui,Arial,sans-serif;max-width:900px;margin:0 auto;padding:16px;background:#f6f7f9;color:#222}
+header h1{margin:0}header p{color:#555}
+.card{background:#fff;border:1px solid #e2e5ea;border-radius:10px;padding:14px;margin:14px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+input,select,button{padding:8px 10px;border-radius:8px;border:1px solid #ccd}
+button{background:#111;color:#fff;cursor:pointer}button.sample{background:#eee;color:#111}
+button.primary{background:#0a6b00;font-weight:700;font-size:15px}
+.pill{background:#eef;padding:4px 10px;border-radius:20px;font-weight:700}
+table{width:100%;border-collapse:collapse;margin-top:8px}td,th{border-bottom:1px solid #eee;padding:6px;text-align:left;font-size:14px}
+.muted{color:#666;font-size:13px}.q{border:1px dashed #aaa;padding:8px;border-radius:8px;margin:6px 0}
+.overlay{position:fixed;inset:0;background:rgba(20,20,25,.72);display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;color:#fff;font-size:17px;z-index:50}
+.overlay[hidden]{display:none}
+.spinner{width:46px;height:46px;border:5px solid #888;border-top-color:#fff;border-radius:50%;animation:spin 0.9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.warn{color:#8a4b00}.bad{color:#a00}.ok{color:#0a6b00}
